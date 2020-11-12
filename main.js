@@ -39,13 +39,14 @@ let signupView = () => {
         // JSON.stringify converts a JavaScript value to a string
         let bodyToBeSent = JSON.stringify({ username, password })
         // fetch is covered in depth in the slides
-        fetch("https://marshy-caterwauling-dugout.glitch.me/signup", { method: "POST", body: bodyToBeSent })
+        // You will need to replace PASTE_THE_URL_FROM_GLITCH with your glitch server url
+        fetch("PASTE_THE_URL_FROM_GLITCH/signup", { method: "POST", body: bodyToBeSent })
             .then(response => {
                 return response.text()
             })
             .then(body => {
                 // putting a debugger statement here might be useful
-                console.log("login received " + body)
+                console.log("received from /login  " + body)
                 // JSON.parse converts a string to a JavaScript value
                 // For this particular server, you always need to call it.
                 let parsed = JSON.parse(body)
